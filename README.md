@@ -1,5 +1,9 @@
 # Academic Project Page Template
 
+<p align="center">
+  <a href="static/pdfs/ForceFlow.pdf"><img src="https://img.shields.io/badge/Paper-PDF-b31b1b?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Paper PDF"></a>
+</p>
+
 > **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
 
 A clean, responsive template for academic project pages.
