@@ -635,7 +635,43 @@
       </div>
     </section>
 
-    <section class="section hero is-light" id="collection">
+    <section class="section hero is-light" id="peeling">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Qualitative Analysis: Cucumber Peeling</h2>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths-desktop">
+            <p class="subtitle is-6 has-text-centered">
+              A long-horizon, continuous-contact task that lies outside our six benchmark tasks, used to qualitatively probe how ForceFlow behaves on an unseen contact-rich skill.
+            </p>
+            <div class="content has-text-justified">
+              <p>
+                Cucumber peeling stresses every component of ForceFlow at once: the robot must traverse a long curved surface while maintaining a narrow band of normal force — too light and the skin is not removed, too heavy and the blade gouges into the flesh or snaps the cucumber. Unlike the planar Clean Whiteboard task or the rotation-only Clean Vase task, peeling couples a non-linear surface with a translating contact point, so the required force changes continuously along the trajectory. This is precisely the regime where vision-only policies fail: the visual difference between "skin removed" and "flesh exposed" is sub-millimeter, while the force signal carries the dominant information.
+              </p>
+              <p>
+                As shown in the rollout strip below, ForceFlow approaches the cucumber, establishes contact, and then commits to a smooth top-to-bottom peeling pass while the predicted next-step force <span class="math-inline"><span class="math-var">f&#770;</span><sub>t+1</sub></span> continually re-anchors the blade against the surface. Because force history is fused as a global condition and motion is generated jointly with the target force through flow matching, the policy reacts to local hardness variations along the cucumber — slowing its lateral velocity in stiffer regions and easing pressure as the geometry tapers — without any task-specific tuning. The right panel shows multiple successful peels collected across trials: the skin strips are continuous, of uniform width, and free of the deep gouges or skipped patches that characterise force-agnostic baselines on this task.
+              </p>
+              <p>
+                We treat this experiment as a qualitative stress test rather than a quantitative benchmark. It complements the six tabulated tasks by showing that the same Vision-to-Force handover and force-aware flow matching policy transfer to a real kitchen-style skill with no architectural change, supporting our claim that ForceFlow learns a reusable contact-regulation behavior rather than a per-task heuristic.
+              </p>
+            </div>
+            <figure class="paper-figure">
+              <img src="static/images/forceflow/peel.png" alt="Cucumber peeling rollout sequence and peeled strips" loading="lazy">
+              <figcaption>Figure 7: Cucumber peeling rollout (left) and peeled-skin strips collected across trials (right). The robot maintains stable normal force along the curved surface, producing continuous, uniform-width strips.</figcaption>
+            </figure>
+            <figure class="paper-figure">
+              <div class="publication-banner">
+                <video controls muted loop playsinline preload="metadata">
+                  <source src="static/videos/peel.mp4" type="video/mp4">
+                </video>
+              </div>
+              <figcaption>Video: ForceFlow performing cucumber peeling at 1x speed.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collection">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Data Collection</h2>
         <div class="columns is-centered">
